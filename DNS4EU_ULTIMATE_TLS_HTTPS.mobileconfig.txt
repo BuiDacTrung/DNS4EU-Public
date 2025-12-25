@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <key>PayloadType</key>
+  <string>Configuration</string>
+
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+
+  <key>PayloadIdentifier</key>
+  <string>eu.joindns4.ultimate.apple</string>
+
+  <key>PayloadUUID</key>
+  <string>1C8B9D24-6A2E-4B2C-9F65-8D91F2A3B901</string>
+
+  <key>PayloadDisplayName</key>
+  <string>DNS4EU Ultimate (TLS + HTTPS)</string>
+
+  <key>PayloadDescription</key>
+  <string>NoAds + Malware + Family protection. DNS-over-TLS primary with HTTPS fallback.</string>
+
+  <key>PayloadOrganization</key>
+  <string>Whalebone, s.r.o.</string>
+
+  <!-- Chống xoá profile -->
+  <key>PayloadRemovalDisallowed</key>
+  <true/>
+
+  <key>PayloadContent</key>
+  <array>
+
+    <!-- DNS-over-TLS (Primary) -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+
+      <key>PayloadIdentifier</key>
+      <string>eu.joindns4.ultimate.tls</string>
+
+      <key>PayloadUUID</key>
+      <string>9A4C7F18-8C9A-4A0F-91C1-7B7F2F1D4A11</string>
+
+      <key>PayloadDisplayName</key>
+      <string>DNS4EU DNS-over-TLS (Primary)</string>
+
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>TLS</string>
+
+        <key>ServerName</key>
+        <string>noads.joindns4.eu</string>
+
+        <key>ServerAddresses</key>
+        <array>
+          <string>86.54.11.13</string>
+          <string>86.54.11.213</string>
+          <string>2a13:1001::86:54:11:13</string>
+          <string>2a13:1001::86:54:11:213</string>
+        </array>
+      </dict>
+    </dict>
+
+    <!-- DNS-over-HTTPS (Fallback) -->
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.dnsSettings.managed</string>
+
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+
+      <key>PayloadIdentifier</key>
+      <string>eu.joindns4.ultimate.https</string>
+
+      <key>PayloadUUID</key>
+      <string>F5B6E9A2-1E67-4F8A-A92D-6E4B1F9C0B22</string>
+
+      <key>PayloadDisplayName</key>
+      <string>DNS4EU DNS-over-HTTPS (Fallback)</string>
+
+      <key>DNSSettings</key>
+      <dict>
+        <key>DNSProtocol</key>
+        <string>HTTPS</string>
+
+        <key>ServerURL</key>
+        <string>https://noads.joindns4.eu/dns-query</string>
+
+        <key>ServerAddresses</key>
+        <array>
+          <string>86.54.11.13</string>
+          <string>86.54.11.213</string>
+          <string>2a13:1001::86:54:11:13</string>
+          <string>2a13:1001::86:54:11:213</string>
+        </array>
+      </dict>
+    </dict>
+
+  </array>
+
+</dict>
+</plist>
